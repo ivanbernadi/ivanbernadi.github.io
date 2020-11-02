@@ -37,24 +37,24 @@
 
             $('.error').hide(); //menyembunyikan label error
             $('option:odd').addClass('meal'); //menerapkan style .meal ke pilihan bernomer ganjil 
-            $('.submit').click(function(event){ //lakukan jika tombol class css dengan nama submit di klik
-                var selectedopts=""; // variabel pilihan yang dipilih
-                var count=$('select option:selected').val(); // 
-                if(count==0)
+            $('.submit').click(function(event){ //untuk trigger jika diklik maka akan berjalan
+                var selectedopts=""; //variabel pilihan yang dipilih
+                var count=$('select option:selected').val(); //menghitung variabel opsi yang dipilih 
+                if(count==0) //fungsi looping untuk menentukan yang ditampilkan
             {
-            $('p.result').hide(); //menyembunyikan label result
-            $('.error').show(); //menunjukan label error
+            $('p.result').hide(); //jika tidak ada yang dipilih maka class result disembunyikan
+            $('.error').show(); //jika tidak ada yang dipilih maka class error ditampilkan
             }
         else
 {
-            $('select option:selected').each(function(){ //
-            selectedopts+=$(this).text()+","; //
+            $('select option:selected').each(function(){ //fungsi looping jika ada pilihan yang dipilih
+            selectedopts+=$(this).text()+","; //memunculkan teks yang dipilih
 });
-            $('.error').hide(); //menyembunyikan label error
-            $('p.result').show(); //menunjukan label hasil
+            $('.error').hide(); //jika dipilih maka class error disembunyikan
+            $('p.result').show(); //jika dipilih maka class rsult ditampilkan
             $('p.result').text('Kamu telah memilih '+ selectedopts); // menunjukan label hasil "Kamu telah memilih + pilihan kopi"
 }
-event.preventDefault();
+event.preventDefault(); //membatalkan peristiwa atau mengembalikan ke default
 });
 });
 </script>
